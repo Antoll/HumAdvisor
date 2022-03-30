@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logosignin"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:translationY="30dp"
+        app:srcCompat="@drawable/logo_humadvisor_sans_fond_bleuté" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="248dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/hind_guntur_bold"
+        android:text="HumAdvisor"
+        android:textAlignment="center"
+        android:textColor="#2D3748"
+        android:textSize="35sp"
+        android:translationX="90dp"
+        android:translationY="160dp" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="297dp"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/hind_guntur_light"
+        android:hint="   Nom d'utilisateur"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:translationX="60dp"
+        android:translationY="230dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="297dp"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/hind_guntur_light"
+        android:hint="   Mot de passe"
+        android:inputType="textPassword|textWebPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:translationX="60dp"
+        android:translationY="290dp" />
+
+    <Button
+        android:id="@+id/loginbutton"
+        android:layout_width="297dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#2D3748"
+        android:fontFamily="@font/hind_guntur_light"
+        android:text="Se connecter"
+        android:textSize="17sp"
+        android:translationX="60dp"
+        android:translationY="360dp" />
+
+    <Button
+        android:id="@+id/registerbutton"
+        android:layout_width="297dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#2D3748"
+        android:fontFamily="@font/hind_guntur_light"
+        android:text="S'inscrire"
+        android:textSize="17sp"
+        android:translationX="60dp"
+        android:translationY="420dp" />
+
+    <Button
+        android:id="@+id/logingogle"
+        android:layout_width="297dp"
+        android:layout_height="62dp"
+        android:backgroundTint="#2D3748"
+        android:fontFamily="@font/hind_guntur_light"
+        android:text="Se connecter avec Google"
+        android:textSize="17sp"
+        android:translationX="60dp"
+        android:translationY="480dp" />
+
+    <Button
+        android:id="@+id/forgotpassword"
+        android:layout_width="194dp"
+        android:layout_height="66dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#00FFFFFF"
+        android:fontFamily="@font/hind_guntur_light"
+        android:text="Mot de passe oublié ?"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:translationX="111dp"
+        android:translationY="550dp" />
+
+
+</RelativeLayout>
