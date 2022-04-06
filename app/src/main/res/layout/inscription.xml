@@ -11,6 +11,7 @@
         android:id="@+id/logosignin"
         android:layout_width="match_parent"
         android:layout_height="140dp"
+        android:contentDescription="@string/logo"
         android:translationY="30dp"
         app:srcCompat="@drawable/logo_humadvisor_sans_fond_bleut" />
 
