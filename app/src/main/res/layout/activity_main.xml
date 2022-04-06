@@ -101,5 +101,15 @@
         android:translationX="111dp"
         android:translationY="548dp" />
 
+    <Button
+        android:id="@+id/temporaire"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:text="temporaire"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:translationX="111dp"
+        android:translationY="150dp" />
+
 
 </RelativeLayout>
