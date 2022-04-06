@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "550087975074-86fbv15fq72adt5vcp8qo4qvntvd362g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uqac.dim.humadvisor",
+            "certificate_hash": "e32a7fa36860ee47a9eeb184e87b31835a81746e"
+          }
+        },
+        {
           "client_id": "550087975074-o8k4h9a23bmupbr8skqifp17n77nt1bf.apps.googleusercontent.com",
           "client_type": 3
         }
