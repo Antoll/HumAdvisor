@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HumAdvisor</string>
+    <string name="user_name">\u0020\u0020\u0020Nom d\'utilisateur</string>
+    <string name="mail">\u0020\u0020\u0020Mail</string>
+    <string name="password">\u0020\u0020\u0020Mot de passe</string>
+    <string name="ConfirmPassword">\u0020\u0020\u0020Confirmer le mot de passe</string>
+    <string name="LogIn">SE CONNECTER</string>
+    <string name="SignUp">S\'INSCRIRE</string>
+    <string name="GoogleLogIn">SE CONNECTER AVEC GOOGLE</string>
+    <string name="forgot_password">MOT DE PASSE OUBLIÉ ?</string>
+    <string name="logo">logo</string>
+    <string name="arrow">arrow</string>
+</resources>

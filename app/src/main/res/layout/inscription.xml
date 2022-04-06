@@ -41,6 +41,19 @@
         android:translationY="230dp" />
 
     <EditText
+        android:id="@+id/mail"
+        android:layout_width="297dp"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/hind_guntur_light"
+        android:hint="@string/mail"
+        android:inputType="textLongMessage|none|text|textEmailSubject"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:translationX="60dp"
+        android:translationY="290dp" />
+
+    <EditText
         android:id="@+id/password"
         android:layout_width="297dp"
         android:layout_height="48dp"
@@ -51,18 +64,21 @@
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:translationX="60dp"
-        android:translationY="290dp" />
+        android:translationY="350dp" />
 
-    <Button
-        android:id="@+id/loginbutton"
+    <EditText
+        android:id="@+id/passwordconfirm"
         android:layout_width="297dp"
-        android:layout_height="62dp"
-        android:backgroundTint="#2D3748"
+        android:layout_height="48dp"
+        android:background="#FFFFFF"
         android:fontFamily="@font/hind_guntur_light"
-        android:text="@string/LogIn"
-        android:textSize="17sp"
+        android:hint="@string/ConfirmPassword"
+        android:inputType="textPassword|textWebPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:translationX="60dp"
-        android:translationY="360dp" />
+        android:translationY="410dp" />
+
 
     <Button
         android:id="@+id/registerbutton"
@@ -73,33 +89,22 @@
         android:text="@string/SignUp"
         android:textSize="17sp"
         android:translationX="60dp"
-        android:translationY="420dp"
-        android:onClick="inscriptionPage"/>
-
-    <Button
-        android:id="@+id/logingogle"
-        android:layout_width="297dp"
-        android:layout_height="62dp"
-        android:backgroundTint="#2D3748"
-        android:fontFamily="@font/hind_guntur_light"
-        android:text="@string/GoogleLogIn"
-        android:textSize="17sp"
-        android:translationX="60dp"
         android:translationY="480dp" />
 
-    <Button
-        android:id="@+id/forgotpassword"
-        android:layout_width="194dp"
-        android:layout_height="66dp"
+
+    <ImageButton
+        android:id="@+id/ib2"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="342dp"
         android:background="#00FFFFFF"
-        android:backgroundTint="#00FFFFFF"
-        android:fontFamily="@font/hind_guntur_light"
-        android:text="@string/forgot_password"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:translationX="111dp"
-        android:translationY="548dp" />
+        android:onClick="connexionPage"
+        android:scaleType="fitCenter"
+        android:src="@drawable/backarrow"
+        android:contentDescription="@string/arrow"
+        android:translationX="10dp"
+        android:translationY="20dp" />
 
 
 </RelativeLayout>
