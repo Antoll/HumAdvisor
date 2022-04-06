@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:translationY="30dp"
-        app:srcCompat="@drawable/logo_humadvisor_sans_fond_bleut" />
+        app:srcCompat="@drawable/logo_humadvisor_sans_fond_bleut"
+        android:contentDescription="@string/logo" />
 
     <TextView
         android:id="@+id/textView"

@@ -11,6 +11,7 @@
         android:id="@+id/logosignin"
         android:layout_width="match_parent"
         android:layout_height="140dp"
+        android:contentDescription="@string/logo"
         android:translationY="30dp"
         app:srcCompat="@drawable/logo_humadvisor_sans_fond_bleut" />
 
@@ -98,10 +99,10 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="342dp"
         android:background="#00FFFFFF"
+        android:contentDescription="@string/arrow"
         android:onClick="connexionPage"
         android:scaleType="fitCenter"
         android:src="@drawable/backarrow"
-        android:contentDescription="@string/arrow"
         android:translationX="10dp"
         android:translationY="20dp" />
 

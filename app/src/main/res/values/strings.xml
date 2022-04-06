@@ -8,4 +8,6 @@
     <string name="SignUp">SIGN UP</string>
     <string name="GoogleLogIn">SIGN IN WITH GOOGLE</string>
     <string name="forgot_password">FORGOT PASSWORD?</string>
+    <string name="logo">logo</string>
+    <string name="arrow">arrow</string>
 </resources>
