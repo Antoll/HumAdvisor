@@ -19,7 +19,7 @@
         android:layout_width="248dp"
         android:layout_height="50dp"
         android:fontFamily="@font/hind_guntur_bold"
-        android:text="HumAdvisor"
+        android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="#2D3748"
         android:textSize="35sp"
@@ -32,7 +32,7 @@
         android:layout_height="48dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/hind_guntur_light"
-        android:hint="   Nom d'utilisateur"
+        android:hint="@string/user_name"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -45,7 +45,7 @@
         android:layout_height="48dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/hind_guntur_light"
-        android:hint="   Mail"
+        android:hint="@string/mail"
         android:inputType="textLongMessage|none|text|textEmailSubject"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -58,7 +58,7 @@
         android:layout_height="48dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/hind_guntur_light"
-        android:hint="   Mot de passe"
+        android:hint="@string/password"
         android:inputType="textPassword|textWebPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -71,7 +71,7 @@
         android:layout_height="48dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/hind_guntur_light"
-        android:hint="   Mot de passe"
+        android:hint="@string/ConfirmPassword"
         android:inputType="textPassword|textWebPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -85,7 +85,7 @@
         android:layout_height="62dp"
         android:backgroundTint="#2D3748"
         android:fontFamily="@font/hind_guntur_light"
-        android:text="S'inscrire"
+        android:text="@string/SignUp"
         android:textSize="17sp"
         android:translationX="60dp"
         android:translationY="480dp" />
@@ -98,11 +98,11 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="342dp"
         android:background="#00FFFFFF"
+        android:onClick="connexionPage"
         android:scaleType="fitCenter"
         android:src="@drawable/backarrow"
         android:translationX="10dp"
-        android:translationY="20dp"
-        android:onClick="connexionPage"/>
+        android:translationY="20dp" />
 
 
 </RelativeLayout>
