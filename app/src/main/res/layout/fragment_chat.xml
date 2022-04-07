@@ -1,16 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".ChatFragment">
+
+    <ImageView
+        android:id="@+id/logo1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:translationY="5dp"
+        app:srcCompat="@drawable/logo_humadvisor_sans_fond_bleut" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/background"
-        android:textSize="25dp"
-        android:text="Chat fragment"
+        android:translationX="52dp"
+        android:translationY="10dp"
+
+        android:fontFamily="@font/hind_guntur_bold"
+        android:textAlignment="center"
+        android:textColor="#2D3748"
+        android:textSize="25sp"
+
+        android:text="@string/chat"
         />
+    <ImageView
+        android:id="@+id/notWorkingIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_working_on_it"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notWorkingIcon"
+        android:fontFamily="@font/hind_guntur_light"
+        android:text="We are working on it!"
+        android:textColor="#000000"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

@@ -12,8 +12,9 @@
     <string name="logo">logo</string>
     <string name="arrow">arrow</string>
 
-    <string name="home">Acceuil</string>
+    <string name="home">Accueil</string>
     <string name="research">Rechercher</string>
     <string name="profile">Profil</string>
     <string name="chat">Discussion</string>
+
 </resources>

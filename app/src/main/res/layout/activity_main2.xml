@@ -8,7 +8,7 @@
     tools:context=".MainActivity2">
 
     <ImageView
-        android:id="@+id/logosignin"
+        android:id="@+id/logoPage"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:translationY="5dp"
