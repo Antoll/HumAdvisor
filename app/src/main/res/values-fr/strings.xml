@@ -17,4 +17,11 @@
     <string name="profile">Profil</string>
     <string name="chat">Discussion</string>
 
+    <string name="temporary">temporaire</string>
+    <string name="chat_fragment">Fragment chat</string>
+    <string name="home_fragment">Fragment accueil</string>
+    <string name="profile_fragment">Fragment profil</string>
+    <string name="search_fragment">Fragment recherche</string>
+
+
 </resources>
