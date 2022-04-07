@@ -13,6 +13,16 @@
         <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/layout/inscription.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.219" />
         <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/mipmap-anydpi-v26/icone.xml" value="0.212" />
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/drawable/ic_chat.xml" value="0.2955" />
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/drawable/ic_home.xml" value="0.2955" />
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/drawable/ic_search.xml" value="0.2955" />
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/layout/activity_main2.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/layout/fragment_chat.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/layout/fragment_home.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/layout/fragment_profile.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/layout/fragment_search.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/menu/bottom_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
