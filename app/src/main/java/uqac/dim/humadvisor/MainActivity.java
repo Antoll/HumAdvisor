@@ -8,14 +8,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.Button;
-
-public class MainActivity extends AppCompatActivity {
-
-
-    Button button;
-=======
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -39,25 +32,23 @@ import com.google.firebase.database.ValueEventListener;
 
 
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity {
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
     SignInButton btn;
+    Button button;
 
->>>>>>> network
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< HEAD
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-
-        button=(Button) findViewById(R.id.temporaire);
+        button =(Button) findViewById(R.id.temporaire);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(this,MainActivity2.class);
         startActivity(intent);
-=======
 
         //Lock screen's rotation
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -100,11 +90,11 @@ public class MainActivity extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+        //FirebaseUser currentUser = mAuth.getCurrentUser();
+        //if(currentUser != null){
+        //    updateUI(currentUser);
+        //}
 
-        //Test
-        basicReadWrite();
     }
 
 
@@ -156,8 +146,6 @@ public class MainActivity extends AppCompatActivity {
         else {
            Log.i("DIM", "success");
         }
-
->>>>>>> network
     }
 
     public void inscriptionPage(View view)
