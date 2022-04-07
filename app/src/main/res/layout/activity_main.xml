@@ -109,7 +109,7 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:translationX="111dp"
-        android:translationY="150dp" />
+        android:translationY="550dp" />
 
 
 </RelativeLayout>

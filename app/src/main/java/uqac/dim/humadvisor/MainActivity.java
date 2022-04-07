@@ -31,17 +31,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void openTempActivity2() {
+    public void openTempActivity2()
+    {
         Intent intent = new Intent(this,MainActivity2.class);
-        startActivity(intent);}
+        startActivity(intent);
+    }
 
     public void inscriptionPage(View view)
     {
-        setContentView(R.layout.inscription);
-    }
-
-    public void connexionPage(View view)
-    {
-        setContentView(R.layout.activity_main);
+        Intent intent = new Intent(this,inscription.class);
+        startActivity(intent);
     }
 }
