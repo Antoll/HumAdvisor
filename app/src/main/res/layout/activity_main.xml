@@ -70,20 +70,19 @@
         android:layout_height="62dp"
         android:backgroundTint="#2D3748"
         android:fontFamily="@font/hind_guntur_light"
+        android:onClick="inscriptionPage"
         android:text="@string/SignUp"
         android:textSize="17sp"
         android:translationX="60dp"
-        android:translationY="420dp"
-        android:onClick="inscriptionPage"/>
+        android:translationY="420dp" />
 
-    <Button
-        android:id="@+id/logingogle"
-        android:layout_width="297dp"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/logingoogle"
+        android:layout_width="300dp"
         android:layout_height="62dp"
         android:backgroundTint="#2D3748"
         android:fontFamily="@font/hind_guntur_light"
         android:text="@string/GoogleLogIn"
-        android:textSize="17sp"
         android:translationX="60dp"
         android:translationY="480dp" />
 
