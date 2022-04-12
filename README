@@ -1,4 +1,10 @@
-Antoine il pue
+ERRORS:
 
-
-Source : wola c'est vrai
+2022-04-11 21:02:07.232 0-0/? E/init: updatable process 'console' exited 4 times in 4 minutes
+2022-04-11 21:02:07.368 480-480/? E/netmgr: qemu_pipe_open_ns:62: Could not connect to the 'pipe:qemud:network' service: Invalid argument
+2022-04-11 21:02:07.368 480-480/? E/netmgr: Failed to open QEMU pipe 'qemud:network': Invalid argument
+2022-04-11 21:02:07.488 520-3012/system_process I/system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+2022-04-11 21:02:08.171 482-482/? E/wifi_forwarder: qemu_pipe_open_ns:62: Could not connect to the 'pipe:qemud:wififorward' service: Invalid argument
+2022-04-11 21:02:08.171 482-482/? E/wifi_forwarder: RemoteConnection failed to initialize: RemoteConnection failed to open pipe
+2022-04-11 21:03:11.628 205-208/? E/android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup34: Permission denied
+2022-04-11 21:03:11.630 205-208/? E/android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup35: Permission denied
