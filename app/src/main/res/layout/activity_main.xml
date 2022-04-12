@@ -8,107 +8,28 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/logosignin"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:id="@+id/logoPage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:translationY="5dp"
         android:contentDescription="@string/logo"
-        android:translationY="30dp"
         app:srcCompat="@drawable/logo_humadvisor_sans_fond_bleut" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="248dp"
-        android:layout_height="50dp"
-        android:fontFamily="@font/hind_guntur_bold"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textColor="#2D3748"
-        android:textSize="35sp"
-        android:translationX="90dp"
-        android:translationY="160dp" />
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="297dp"
-        android:layout_height="48dp"
-        android:background="#FFFFFF"
-        android:fontFamily="@font/hind_guntur_light"
-        android:hint="@string/user_name"
-        android:inputType="textPersonName"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:translationX="60dp"
-        android:translationY="230dp" />
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="670dp"
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="297dp"
-        android:layout_height="48dp"
-        android:background="#FFFFFF"
-        android:fontFamily="@font/hind_guntur_light"
-        android:hint="@string/password"
-        android:inputType="textPassword|textWebPassword"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:translationX="60dp"
-        android:translationY="290dp" />
+        android:layout_above="@id/bottom_navigation_view" />
 
-    <Button
-        android:id="@+id/loginbutton"
-        android:layout_width="297dp"
-        android:layout_height="62dp"
-        android:backgroundTint="#2D3748"
-        android:fontFamily="@font/hind_guntur_light"
-        android:text="@string/LogIn"
-        android:textSize="17sp"
-        android:translationX="60dp"
-        android:translationY="360dp" />
 
-    <Button
-        android:id="@+id/registerbutton"
-        android:layout_width="297dp"
-        android:layout_height="62dp"
-        android:backgroundTint="#2D3748"
-        android:fontFamily="@font/hind_guntur_light"
-        android:onClick="inscriptionPage"
-        android:text="@string/SignUp"
-        android:textSize="17sp"
-        android:translationX="60dp"
-        android:translationY="420dp" />
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/logingoogle"
-        android:layout_width="300dp"
-        android:layout_height="62dp"
-        android:backgroundTint="#2D3748"
-        android:fontFamily="@font/hind_guntur_light"
-        android:text="@string/GoogleLogIn"
-        android:translationX="60dp"
-        android:translationY="480dp" />
-
-    <Button
-        android:id="@+id/forgotpassword"
-        android:layout_width="194dp"
-        android:layout_height="66dp"
-        android:background="#00FFFFFF"
-        android:backgroundTint="#00FFFFFF"
-        android:fontFamily="@font/hind_guntur_light"
-        android:text="@string/forgot_password"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:translationX="111dp"
-        android:translationY="548dp" />
-
-    <Button
-        android:id="@+id/temporaire"
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:text="@string/temporary"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:translationX="111dp"
-        android:translationY="550dp" />
-
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_menu"/>
 
 </RelativeLayout>
