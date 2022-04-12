@@ -34,7 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class LoginActivity extends AppCompatActivity {
-    private static final String TAG = "GoogleActivity";
+    private static final String TAG = "LoginActivity";
     private static final int RC_SIGN_IN = 9001;
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //Login with google
         mAuth = FirebaseAuth.getInstance();
+        //je n'arrive pas à avoir le token de facon dynamique à l'aide
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken("550087975074-o8k4h9a23bmupbr8skqifp17n77nt1bf.apps.googleusercontent.com")
                 .requestEmail()
@@ -136,11 +137,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
         if (user == null){
-            Log.i("DIM", "Fail");
+            Log.i("DIM", "Failed to update UI");
         }
         else {
-           openMainActivity();
-           finish();
+            Log.i("DIM", "UI update successful");
+            openMainActivity();
+            finish();
         }
     }
 
