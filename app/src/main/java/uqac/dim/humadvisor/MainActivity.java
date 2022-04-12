@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 9001;
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
-    SignInButton btn;
+    SignInButton google_button;
     Button button;
 
     @Override
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        btn = findViewById(R.id.logingoogle);
-        btn.setOnClickListener(new View.OnClickListener() {
+        google_button = findViewById(R.id.logingoogle);
+        google_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent  signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -142,7 +142,8 @@ public class MainActivity extends AppCompatActivity {
             Log.i("DIM", "Fail");
         }
         else {
-           Log.i("DIM", "success");
+           openTempActivity2();
+           finish();
         }
     }
 
