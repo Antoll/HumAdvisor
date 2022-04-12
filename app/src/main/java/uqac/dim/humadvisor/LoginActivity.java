@@ -69,20 +69,17 @@ public class LoginActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openTempActivity2();
+                openMainActivity();
             }
         });
 
     }
 
 
-    public void openTempActivity2()
+    public void openMainActivity()
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-
-        //Lock screen's rotation
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     @Override
@@ -142,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
             Log.i("DIM", "Fail");
         }
         else {
-           openTempActivity2();
+           openMainActivity();
            finish();
         }
     }
