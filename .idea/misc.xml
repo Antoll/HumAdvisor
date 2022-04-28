@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/layout/fragment_home.xml" value="0.213768115942029" />
+        <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/layout/item_home.xml" value="0.213768115942029" />
         <entry key="app/src/main/res/layout/activity_inscription.xml" value="0.4634615384615385" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.6791666666666667" />
