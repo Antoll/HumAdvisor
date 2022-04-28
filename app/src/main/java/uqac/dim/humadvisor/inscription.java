@@ -1,5 +1,6 @@
 package uqac.dim.humadvisor;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,10 +10,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Pattern;
 
@@ -23,6 +30,7 @@ public class inscription extends AppCompatActivity implements View.OnClickListen
     private TextView signUp;
     private ImageButton returnButton;
     private EditText editTextPseudo, editTextMail, editTextPass, editTextConfirmPass;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +46,7 @@ public class inscription extends AppCompatActivity implements View.OnClickListen
         editTextMail = (EditText) findViewById(R.id.mail);
         editTextPass = (EditText) findViewById(R.id.password);
         editTextConfirmPass = (EditText) findViewById(R.id.passwordconfirm);
-
+        progressBar = (ProgressBar) findViewById(R.id.progressbar);
 
     }
 
@@ -54,9 +62,7 @@ public class inscription extends AppCompatActivity implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.ib2:
-                Intent intent = new Intent(this,LoginActivity.class);
-                startActivity(intent);
-                finish();
+                loginPage();
                 break;
             case R.id.registerbutton:
                 registerUser();
@@ -64,11 +70,18 @@ public class inscription extends AppCompatActivity implements View.OnClickListen
         }
     }
 
+    public void loginPage()
+    {
+        Intent intent = new Intent(this,LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private void registerUser(){
         String pseudo = editTextPseudo.getText().toString().trim();
-        String mail = editTextMail.getText().toString().trim();
-        String password = editTextPass.getText().toString().trim();
-        String passwordConfirm = editTextConfirmPass.getText().toString().trim();
+        String email = editTextMail.getText().toString().trim();
+        String password = editTextPass.getText().toString();
+        String passwordConfirm = editTextConfirmPass.getText().toString();
 
         if (pseudo.isEmpty()){
             editTextPseudo.setError("Pseudo is required");
@@ -76,13 +89,13 @@ public class inscription extends AppCompatActivity implements View.OnClickListen
             return;
         }
 
-        if (mail.isEmpty()){
+        if (email.isEmpty()){
             editTextMail.setError("Mail is required");
             editTextMail.requestFocus();
             return;
         }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             editTextMail.setError("Please provide valid email");
             editTextMail.requestFocus();
             return;
@@ -95,7 +108,7 @@ public class inscription extends AppCompatActivity implements View.OnClickListen
         }
 
         if (password.length() < 6){
-            editTextPass.setError("Password not long enough");
+            editTextPass.setError("Password needs 6 characters at least");
             editTextPass.requestFocus();
             return;
         }
@@ -112,5 +125,33 @@ public class inscription extends AppCompatActivity implements View.OnClickListen
             }
         }
 
+        progressBar.setVisibility(View.VISIBLE);
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            User user = new User(pseudo, email);
+                            FirebaseDatabase.getInstance().getReference("Users")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()){
+                                        Toast.makeText(inscription.this, "User has been registered successfully", Toast.LENGTH_SHORT).show();
+                                        progressBar.setVisibility(View.GONE);
+                                        loginPage();
+                                    }else {
+                                        Toast.makeText(inscription.this, "Failed to register", Toast.LENGTH_SHORT).show();
+                                        progressBar.setVisibility(View.GONE);
+                                    }
+                                }
+                            });
+                        }else {
+                            Toast.makeText(inscription.this, "Failed to register", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                });
     }
 }

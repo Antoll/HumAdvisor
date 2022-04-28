@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/logosignin"
@@ -28,12 +28,12 @@
         android:translationY="160dp" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/email_login"
         android:layout_width="297dp"
         android:layout_height="48dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/hind_guntur_light"
-        android:hint="@string/user_name"
+        android:hint="@string/email_login"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -41,7 +41,7 @@
         android:translationY="230dp" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/password_login"
         android:layout_width="297dp"
         android:layout_height="48dp"
         android:background="#FFFFFF"
@@ -75,16 +75,7 @@
         android:textSize="17sp"
         android:translationX="60dp"
         android:translationY="420dp" />
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/logingoogle"
-        android:layout_width="300dp"
-        android:layout_height="62dp"
-        android:backgroundTint="#2D3748"
-        android:fontFamily="@font/hind_guntur_light"
-        android:text="@string/GoogleLogIn"
-        android:translationX="60dp"
-        android:translationY="480dp" />
+    
 
     <Button
         android:id="@+id/forgotpassword"
@@ -109,6 +100,13 @@
         android:textSize="20sp"
         android:translationX="111dp"
         android:translationY="550dp" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
 
 
 </RelativeLayout>

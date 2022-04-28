@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".inscription">
 
     <ImageView
         android:id="@+id/logosignin"
@@ -104,6 +104,14 @@
         android:src="@drawable/backarrow"
         android:translationX="10dp"
         android:translationY="20dp" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
 
 
 </RelativeLayout>

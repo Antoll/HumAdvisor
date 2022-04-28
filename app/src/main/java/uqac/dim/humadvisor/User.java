@@ -11,9 +11,9 @@ public class User {
     private int confortable_nbr;
 
     public User(){}
-    public User(String name, String pseudo){
-        this.mail = mail;
+    public User(String pseudo, String mail){
         this.pseudo = pseudo;
+        this.mail = mail;
         this.globalNote = -1;
         this.getGlobalNote_nbr = 0;
         this.confortable = -1;

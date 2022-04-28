@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -33,20 +36,25 @@ import com.google.firebase.database.ValueEventListener;
 
 
 
-public class LoginActivity extends AppCompatActivity {
-    private static final String TAG = "LoginActivity";
-    private static final int RC_SIGN_IN = 9001;
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
-    private GoogleSignInClient mGoogleSignInClient;
-    SignInButton google_button;
     Button button;
+    private EditText editTextMail, editTextPassword;
+    private Button signIn;
+    private ProgressBar progressBar;
+
+//    private static final String TAG = "LoginActivity";
+//    private static final int RC_SIGN_IN = 9001;
+//    private GoogleSignInClient mGoogleSignInClient;
+//    SignInButton google_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        //this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
 
 
@@ -68,8 +76,14 @@ public class LoginActivity extends AppCompatActivity {
 //            }
 //        });
 
-        mAuth = FirebaseAuth.getInstance();
+        signIn = (Button) findViewById(R.id.loginbutton);
+        signIn.setOnClickListener(this);
 
+        editTextMail = (EditText) findViewById(R.id.email_login);
+        editTextPassword = (EditText) findViewById(R.id.password_login);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressbar);
+        mAuth = FirebaseAuth.getInstance();
 
         button = findViewById(R.id.temporaire);
         button.setOnClickListener(new View.OnClickListener() {
@@ -81,11 +95,59 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.loginbutton:
+                userLogin();
+        }
+    }
+
+    private void userLogin(){
+        String email = editTextMail.getText().toString().trim();
+        String password = editTextPassword.getText().toString();
+
+        if (email.isEmpty()){
+            editTextMail.setError("Email is requiered");
+            editTextMail.requestFocus();
+            return;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            editTextMail.setError("Please provide valid email");
+            editTextMail.requestFocus();
+            return;
+        }
+
+        if (password.isEmpty()){
+            editTextPassword.setError("Password is required");
+            editTextPassword.requestFocus();
+            return;
+        }
+
+        progressBar.setVisibility(View.VISIBLE);
+
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    progressBar.setVisibility(View.GONE);
+                    openMainActivity();
+                }else{
+                    Toast.makeText(LoginActivity.this, "Failed to login! Please check your credentials", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
+                }
+            }
+        });
+
+    }
+
 
     public void openMainActivity()
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -147,7 +209,6 @@ public class LoginActivity extends AppCompatActivity {
         else {
             Log.i("DIM", "UI update successful");
             openMainActivity();
-            finish();
         }
     }
 
@@ -157,5 +218,4 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-
 }
