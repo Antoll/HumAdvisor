@@ -1,23 +1,40 @@
 package uqac.dim.humadvisor;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 
 public class HomeFragment extends Fragment {
 
 
-    Button buttonLike1;
-    Button buttonLike2;
-    Button buttonLike3;
-    Button buttonLike4;
-    Button buttonLike5;
+    Button buttonLike;
+    RecyclerView recyclerView;
+    DatabaseReference database;
+    AdapterFromFirebase adapterFromFirebase;
+    ArrayList<User> list;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,59 +42,50 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home,
                 container, false);
-        buttonLike1 = (Button) view.findViewById(R.id.buttonLike1);
-        buttonLike2 = (Button) view.findViewById(R.id.buttonLike2);
-        buttonLike3 = (Button) view.findViewById(R.id.buttonLike3);
-        buttonLike4 = (Button) view.findViewById(R.id.buttonLike4);
-        buttonLike5 = (Button) view.findViewById(R.id.buttonLike5);
 
+        recyclerView = view.findViewById(R.id.recyclerviewHome);
+        database = FirebaseDatabase.getInstance().getReference("Users");
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false)); //iciciicicic
 
-        buttonLike1.setOnClickListener(new View.OnClickListener() {
+        list = new ArrayList<>();
+        adapterFromFirebase = new AdapterFromFirebase(getActivity(), list);  //icicicicicc
+        recyclerView.setAdapter(adapterFromFirebase);
+
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+
+                    User user = dataSnapshot.getValue(User.class);
+                    list.add(user);
+                }
+                adapterFromFirebase.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        /*
+        buttonLike = (Button) view.findViewById(R.id.itemHomeLike);
+        buttonLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                if(buttonLike1.getText()=="❤")
-                    buttonLike1.setText("♡");
+                if(buttonLike.getText()=="❤")
+                    buttonLike.setText("♡");
                 else
-                    buttonLike1.setText("❤");
+                    buttonLike.setText("❤");
             }
         });
-        buttonLike2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(buttonLike2.getText()=="❤")
-                    buttonLike2.setText("♡");
-                else
-                    buttonLike2.setText("❤");
-            }
-        });
-        buttonLike3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(buttonLike3.getText()=="❤")
-                    buttonLike3.setText("♡");
-                else
-                    buttonLike3.setText("❤");
-            }
-        });
-        buttonLike4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(buttonLike4.getText()=="❤")
-                    buttonLike4.setText("♡");
-                else
-                    buttonLike4.setText("❤");
-            }
-        });
-        buttonLike5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(buttonLike5.getText()=="❤")
-                    buttonLike5.setText("♡");
-                else
-                    buttonLike5.setText("❤");
-            }
-        });
+        */
+
+
         return view;
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_home, container, false);
