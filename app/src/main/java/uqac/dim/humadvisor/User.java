@@ -1,31 +1,23 @@
 package uqac.dim.humadvisor;
 
 
-public class UserInfo {
+public class User {
 
-    private String name;
     private String pseudo;
+    private String mail;
     private int globalNote;
     private int getGlobalNote_nbr;
     private int confortable;
     private int confortable_nbr;
 
-    public UserInfo(){}
-    public UserInfo(String name, String pseudo){
-        this.name = name;
+    public User(){}
+    public User(String name, String pseudo){
+        this.mail = mail;
         this.pseudo = pseudo;
         this.globalNote = -1;
         this.getGlobalNote_nbr = 0;
         this.confortable = -1;
         this.confortable_nbr = 0;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getPseudo() {
@@ -34,6 +26,14 @@ public class UserInfo {
 
     public void setPseudo(String pseudo) {
         this.pseudo = pseudo;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setName(String mail) {
+        this.mail = mail;
     }
 
     public int getGlobalNote() {
