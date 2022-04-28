@@ -75,7 +75,7 @@
         android:textSize="17sp"
         android:translationX="60dp"
         android:translationY="420dp" />
-    
+
 
     <Button
         android:id="@+id/forgotpassword"
