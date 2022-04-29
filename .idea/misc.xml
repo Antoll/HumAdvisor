@@ -3,12 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2445" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/drawable/ic_chat.xml" value="0.2445" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/drawable/ic_home.xml" value="0.2445" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2445" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/drawable/ic_profile.xml" value="0.2445" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/drawable/ic_search.xml" value="0.2445" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/drawable/icone_background.xml" value="0.2445" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/font/hind_guntur_bold.xml" value="0.284375" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/font/hind_guntur_light.xml" value="0.284375" />
         <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/layout/activity_inscription.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/layout/activity_main.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/layout/fragment_chat.xml" value="0.17617753623188406" />
-        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/layout/fragment_home.xml" value="0.17617753623188406" />
-        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/layout/fragment_search.xml" value="0.17617753623188406" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/layout/item_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/layout/login_activity.xml" value="0.1" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/33695/HumAdvisor/app/src/main/res/menu/logout_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/layout/fragment_home.xml" value="0.213768115942029" />
         <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/layout/item_home.xml" value="0.213768115942029" />
         <entry key="app/src/main/res/layout/activity_inscription.xml" value="0.4634615384615385" />

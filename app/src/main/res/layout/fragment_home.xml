@@ -8,25 +8,46 @@
     tools:context=".HomeFragment">
 
 
-
-    <ImageView
-        android:id="@+id/logo1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:translationY="5dp"
-        app:srcCompat="@drawable/logo_humadvisor_sans_fond_bleut" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:translationX="52dp"
-        android:translationY="10dp"
-        android:fontFamily="@font/hind_guntur_bold"
-        android:textColor="#2D3748"
-        android:text="@string/home"
-        android:background="@drawable/background"
-        android:textSize="25sp"
-        />
+        android:id="@+id/linear_home"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/logo1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:translationY="5dp"
+            app:srcCompat="@drawable/logo_humadvisor_sans_fond_bleut" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationX="10dp"
+            android:translationY="10dp"
+            android:fontFamily="@font/hind_guntur_bold"
+            android:textColor="#2D3748"
+            android:text="@string/home"
+            android:textSize="25sp"
+            />
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchview"
+            android:translationX="12dp"
+            android:translationY="7dp"
+            android:queryHint="@string/search_user"
+            />
+
+
+    </LinearLayout>
+
+
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewHome"

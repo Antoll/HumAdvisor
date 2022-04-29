@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView ;
 
     HomeFragment homeFragment = new HomeFragment();
-    SearchFragment searchFragment = new SearchFragment();
+    //SearchFragment searchFragment = new SearchFragment();
     ProfileFragment profileFragment = new ProfileFragment();
     ChatFragment chatFragment = new ChatFragment();
     @Override
@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_home:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
                         return true;
-                    case R.id.nav_search:
+                    /*case R.id.nav_search:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,searchFragment).commit();
-                        return true;
+                        return true;*/
                     case R.id.nav_profile:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,profileFragment).commit();
                         return true;

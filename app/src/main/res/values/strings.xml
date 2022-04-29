@@ -26,6 +26,7 @@
     <string name="home_fragment">Home fragment</string>
     <string name="profile_fragment">Profile fragment</string>
     <string name="search_fragment">Search fragment</string>
+    <string name="search_user">Search a user</string>
 
     <string name="confort">Comfort:</string>
     <string name="sympathie">Sympathy:</string>
