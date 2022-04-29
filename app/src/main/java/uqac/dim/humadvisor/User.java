@@ -1,6 +1,8 @@
 package uqac.dim.humadvisor;
 
 
+import java.util.List;
+
 public class User {
 
     private String pseudo;
@@ -22,6 +24,9 @@ public class User {
 
     private float sociable;
     private int sociable_nbr;
+
+    private List<String> usersNoted;
+
 
     public User(){}
     public User(String pseudo, String mail){
@@ -147,4 +152,7 @@ public class User {
         this.sociable_nbr = sociable_nbr;
     }
 
+    public List<String> getUsersNoted() {
+        return usersNoted;
+    }
 }
