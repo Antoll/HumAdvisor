@@ -52,6 +52,10 @@ public class User {
         this.mail = mail;
     }
 
+    public String getFirebaseUID() {
+        return firebaseUID;
+    }
+
     public float getGlobalNote() {
         return this.globalNote;
     }

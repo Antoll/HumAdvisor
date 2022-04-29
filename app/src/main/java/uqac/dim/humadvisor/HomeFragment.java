@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -55,22 +56,34 @@ public class HomeFragment extends Fragment {
         database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int range = 0;
 
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-
                     User user = dataSnapshot.getValue(User.class);
-                    list.add(user);
+                    if (range < 8) {
+                        list.add(user);
+                    }else {
+                        break;
+                    }
+                    range++;
                 }
                 adapterFromFirebase.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
 
-
+//        recyclerView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                int itemPosition = recyclerView.getChildLayoutPosition(view);
+//                User userClickedOn = list.get(itemPosition);
+//                String userClickedOnFirebaseUID= userClickedOn.getFirebaseUID();
+//                Toast.makeText(getActivity(), "clicked", Toast.LENGTH_SHORT).show();
+//            }
+//        });
         /*
         buttonLike = (Button) view.findViewById(R.id.itemHomeLike);
         buttonLike.setOnClickListener(new View.OnClickListener() {
@@ -84,10 +97,9 @@ public class HomeFragment extends Fragment {
             }
         });
         */
-
-
         return view;
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_home, container, false);
     }
+
 }
