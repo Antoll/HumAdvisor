@@ -7,6 +7,7 @@ public class User {
 
     private String pseudo;
     private String mail;
+    private String firebaseUID;
 
     private float globalNote;
     private float confortable;
@@ -20,9 +21,10 @@ public class User {
 
 
     public User(){}
-    public User(String pseudo, String mail){
+    public User(String pseudo, String mail, String firebaseUID){
         this.pseudo = pseudo;
         this.mail = mail;
+        this.firebaseUID = firebaseUID;
         this.nbrOfVote = 0;
 
         //Critères

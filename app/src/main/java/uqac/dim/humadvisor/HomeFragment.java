@@ -62,7 +62,6 @@ public class HomeFragment extends Fragment {
                     list.add(user);
                 }
                 adapterFromFirebase.notifyDataSetChanged();
-
             }
 
             @Override
@@ -70,6 +69,7 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
 
         /*
         buttonLike = (Button) view.findViewById(R.id.itemHomeLike);
