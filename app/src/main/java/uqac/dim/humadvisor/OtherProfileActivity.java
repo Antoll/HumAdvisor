@@ -1,14 +1,17 @@
 package uqac.dim.humadvisor;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -18,37 +21,53 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-
-public class ProfileFragment extends Fragment {
+public class OtherProfileActivity extends Activity implements View.OnClickListener {
 
     TextView textViewGlobalNote, textViewConfortable, textViewSympa,
             textViewBeau, textViewIntelligent, textViewSociable,
             textViewPseudo;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
-    }
+    Button rateUserButton;
+    String clickedUID;
 
     @Override
-    public void onStart() {
-        super.onStart();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_other_profile);
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if (extras == null) {
+                clickedUID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            } else {
+                clickedUID = extras.getString("ClickedUID");
+            }
+        } else {
+            clickedUID = (String) savedInstanceState.getSerializable("ClickedUID");
+        }
 
-        textViewPseudo = getActivity().findViewById(R.id.username_textedit);
-        textViewGlobalNote = getActivity().findViewById(R.id.global_textedit);
-        textViewConfortable = getActivity().findViewById(R.id.confort_textedit);
-        textViewSympa = getActivity().findViewById(R.id.sympa_textedit);
-        textViewBeau = getActivity().findViewById(R.id.beaute_textedit);
-        textViewIntelligent = getActivity().findViewById(R.id.intel_textedit);
-        textViewSociable = getActivity().findViewById(R.id.sociable_textedit);
+        Toast.makeText(this, clickedUID, Toast.LENGTH_SHORT).show();
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String currentID = user.getUid();
+
+
+        textViewPseudo = findViewById(R.id.username_textedit);
+        textViewGlobalNote = findViewById(R.id.global_textedit);
+        textViewConfortable = findViewById(R.id.confort_textedit);
+        textViewSympa = findViewById(R.id.sympa_textedit);
+        textViewBeau = findViewById(R.id.beaute_textedit);
+        textViewIntelligent = findViewById(R.id.intel_textedit);
+        textViewSociable = findViewById(R.id.sociable_textedit);
+
+
+        //UserClicked
+
+//        Bundle bundle = this.getArguments();
+//        if (bundle != null) {
+//            clickedUID = bundle.getString("ClickedUID", currentID);
+//        }
+
         DatabaseReference reference;
         reference = FirebaseDatabase.getInstance().getReference("Users");
-        reference.child(currentID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        reference.child(clickedUID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (task.getResult().exists()){
@@ -86,5 +105,20 @@ public class ProfileFragment extends Fragment {
                 }
             }
         });
+
+        rateUserButton = (Button) findViewById(R.id.rate_user_button);
+        rateUserButton.setOnClickListener(this);
+
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.rate_user_button:
+                Intent intent = new Intent(this, RateActivity.class);
+                startActivity(intent);
+                finish();
+        }
     }
 }

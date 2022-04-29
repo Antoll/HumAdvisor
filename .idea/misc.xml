@@ -26,7 +26,9 @@
         <entry key="..\:/Users/puffa/Desktop/HumAdvisor/app/src/main/res/layout/item_home.xml" value="0.213768115942029" />
         <entry key="app/src/main/res/layout/activity_inscription.xml" value="0.4634615384615385" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.13240740740740742" />
+        <entry key="app/src/main/res/layout/activity_other_profile.xml" value="0.5416098226466576" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.6791666666666667" />
+        <entry key="app/src/main/res/layout/fragment_other_profile.xml" value="0.6791666666666667" />
         <entry key="app/src/main/res/layout/fragment_other_user.xml" value="0.6791666666666667" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.6791666666666667" />
         <entry key="app/src/main/res/layout/login_activity.xml" value="0.5279672578444747" />

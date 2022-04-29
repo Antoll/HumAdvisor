@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    tools:context=".OtherProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,6 +31,17 @@
             android:text="TODO (strings/username_2)"
             android:padding="25sp"
             />
+
+        <Button
+            android:id="@+id/rate_user_button"
+            android:layout_width="wrap_content"
+            android:layout_height="70sp"
+            android:text="@string/rate_user"
+            android:textSize="25sp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/background"
+            />
+
 
     </LinearLayout>
 
@@ -95,12 +106,6 @@
                 android:textSize="25sp"
                 android:padding="5sp"
                 android:text="TODO (strings/global)"/>
-
-
         </LinearLayout>
-
-
-
     </ScrollView>
-
 </RelativeLayout>

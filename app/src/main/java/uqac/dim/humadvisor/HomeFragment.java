@@ -1,10 +1,9 @@
 package uqac.dim.humadvisor;
 
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -23,10 +21,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements AdapterFromFirebase.OnNoteListener {
 
 
     Button buttonLike;
@@ -50,7 +47,7 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false)); //iciciicicic
 
         list = new ArrayList<>();
-        adapterFromFirebase = new AdapterFromFirebase(getActivity(), list);  //icicicicicc
+        adapterFromFirebase = new AdapterFromFirebase(getActivity(), list, this);  //icicicicicc
         recyclerView.setAdapter(adapterFromFirebase);
 
         database.addValueEventListener(new ValueEventListener() {
@@ -98,8 +95,18 @@ public class HomeFragment extends Fragment {
         });
         */
         return view;
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
+    @Override
+    public void onNoteClick(int position) {
+        User userClickedOn = list.get(position);
+        String userClickedOnFirebaseUID= userClickedOn.getFirebaseUID();
+        Bundle bundle = new Bundle();
+        bundle.putString("ClickedUID", userClickedOnFirebaseUID);
+
+        Intent intent = new Intent(getActivity(), OtherProfileActivity.class);
+        intent.putExtra("ClickedUID", userClickedOnFirebaseUID);
+        startActivity(intent);
+        /// PASSER A L'AUTRE ACTIVITE
+    }
 }
