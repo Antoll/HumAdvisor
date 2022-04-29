@@ -23,7 +23,7 @@ public class User {
     public User(String pseudo, String mail){
         this.pseudo = pseudo;
         this.mail = mail;
-        this.nbrOfVote = 1;
+        this.nbrOfVote = 0;
 
         //Critères
         this.globalNote = 0f;
