@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">HumAdvisor</string>
     <string name="user_name">\u0020\u0020\u0020Username</string>
+    <string name="user_name2">Username:</string>
     <string name="mail">\u0020\u0020\u0020Mail</string>
     <string name="password">\u0020\u0020\u0020Password</string>
     <string name="ConfirmPassword">\u0020\u0020\u0020Confirm password</string>
@@ -15,13 +16,24 @@
     <string name="home">Home</string>
     <string name="research">Research</string>
     <string name="profile">Profile</string>
+    <string name="profile2">PROFILE</string>
+    <string name="profile_picture">Profile picture</string>
     <string name="chat">Chat</string>
+    <string name="rate_user">Rate this user</string>
 
     <string name="temporary">temporary</string>
     <string name="chat_fragment">Chat fragment</string>
     <string name="home_fragment">Home fragment</string>
     <string name="profile_fragment">Profile fragment</string>
     <string name="search_fragment">Search fragment</string>
+
+    <string name="confort">Comfort:</string>
+    <string name="sympathie">Sympathy:</string>
+    <string name="sociabilité">Sociability:</string>
+    <string name="intelligence">Intelligence:</string>
+    <string name="beauté">Beauty:</string>
+    <string name="global">Global Mark:</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
