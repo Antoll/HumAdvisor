@@ -9,21 +9,12 @@ public class User {
     private String mail;
 
     private float globalNote;
-
     private float confortable;
-    private int confortable_nbr;
-
     private float sympa;
-    private int sympa_nbr;
-
     private float intelligence;
-    private int intelligence_nbr;
-
     private float beau;
-    private int beau_nbr;
-
     private float sociable;
-    private int sociable_nbr;
+    private int nbrOfVote;
 
     private List<String> usersNoted;
 
@@ -32,19 +23,15 @@ public class User {
     public User(String pseudo, String mail){
         this.pseudo = pseudo;
         this.mail = mail;
+        this.nbrOfVote = 1;
 
         //Critères
-        this.globalNote = -1f;
-        this.confortable = -1f;
-        this.confortable_nbr = 0;
-        this.sympa = -1f;
-        this.sympa_nbr = 0;
-        this.intelligence = -1f;
-        this.intelligence_nbr = 0;
-        this.beau = -1f;
-        this.beau_nbr = 0;
-        this.sociable = -1f;
-        this.sociable_nbr = 0;
+        this.globalNote = 0f;
+        this.confortable = 0f;
+        this.sympa = 0f;
+        this.intelligence = 0f;
+        this.beau = 0f;
+        this.sociable = 0f;
     }
 
     public String getPseudo() {
@@ -71,21 +58,12 @@ public class User {
         this.globalNote = globalNote;
     }
 
-
     public float getConfortable(){
         return this.confortable;
     }
 
     public void setConfortable(float confortable){
         this.confortable = confortable;
-    }
-
-    public int getConfortable_nbr() {
-        return this.confortable_nbr;
-    }
-
-    public void setConfortable_nbr(int confortable_nbr) {
-        this.confortable_nbr = confortable_nbr;
     }
 
     public float getSympa() {
@@ -96,28 +74,12 @@ public class User {
         this.sympa = sympa;
     }
 
-    public int getSympa_nbr() {
-        return this.sympa_nbr;
-    }
-
-    public void setSympa_nbr(int sympa_nbr) {
-        this.sympa_nbr = sympa_nbr;
-    }
-
     public float getIntelligence() {
         return this.intelligence;
     }
 
     public void setIntelligence(float intelligence) {
         this.intelligence = intelligence;
-    }
-
-    public int getIntelligence_nbr() {
-        return this.intelligence_nbr;
-    }
-
-    public void setIntelligence_nbr(int intelligence_nbr) {
-        this.intelligence_nbr = intelligence_nbr;
     }
 
     public float getBeau() {
@@ -128,14 +90,6 @@ public class User {
         this.beau = beau;
     }
 
-    public int getBeau_nbr() {
-        return this.beau_nbr;
-    }
-
-    public void setBeau_nbr(int beau_nbr) {
-        this.beau_nbr = beau_nbr;
-    }
-
     public float getSociable() {
         return sociable;
     }
@@ -144,15 +98,15 @@ public class User {
         this.sociable = sociable;
     }
 
-    public int getSociable_nbr() {
-        return sociable_nbr;
-    }
-
-    public void setSociable_nbr(int sociable_nbr) {
-        this.sociable_nbr = sociable_nbr;
-    }
-
     public List<String> getUsersNoted() {
         return usersNoted;
+    }
+
+    public int getNbrOfVote() {
+        return nbrOfVote;
+    }
+
+    public void setNbrOfVote(int nbrOfVote) {
+        this.nbrOfVote = nbrOfVote;
     }
 }
