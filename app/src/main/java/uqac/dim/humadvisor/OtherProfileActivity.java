@@ -45,9 +45,6 @@ public class OtherProfileActivity extends Activity implements View.OnClickListen
             clickedUID = (String) savedInstanceState.getSerializable("ClickedUID");
         }
 
-        Toast.makeText(this, clickedUID, Toast.LENGTH_SHORT).show();
-
-
 
         textViewPseudo = findViewById(R.id.username_textedit);
         textViewGlobalNote = findViewById(R.id.global_textedit);
@@ -117,8 +114,8 @@ public class OtherProfileActivity extends Activity implements View.OnClickListen
         switch (view.getId()){
             case R.id.rate_user_button:
                 Intent intent = new Intent(this, RateActivity.class);
+                intent.putExtra("ClickedUID", clickedUID);
                 startActivity(intent);
-                finish();
         }
     }
 }

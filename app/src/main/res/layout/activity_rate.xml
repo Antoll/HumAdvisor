@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RateActivity"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/confort_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confort"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar_confort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/confort_textview"
+        android:numStars="5"
+        android:rating="1" />
+
+    <TextView
+        android:id="@+id/sympa_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingBar_confort"
+        android:text="@string/sympathie"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar_sympa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sympa_textview"
+        android:numStars="5"
+        android:rating="1"/>
+
+    <TextView
+        android:id="@+id/sociable_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingBar_sympa"
+        android:text="@string/sociabilité"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar_sociable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sociable_textview"
+        android:numStars="5"
+        android:rating="1"/>
+
+    <TextView
+        android:id="@+id/intel_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingBar_sociable"
+        android:text="@string/intelligence"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar_intel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intel_textview"
+        android:numStars="5"
+        android:rating="1"/>
+
+    <TextView
+        android:id="@+id/beaute_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingBar_intel"
+        android:text="@string/beauté"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar_beaute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/beaute_textview"
+        android:numStars="5"
+        android:rating="1" />
+
+    <Button
+        android:id="@+id/ratenow_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ratingBar_beaute"
+        android:layout_centerHorizontal="true"
+        android:text="RATE NOW" />
+
+
+
+</RelativeLayout>
+

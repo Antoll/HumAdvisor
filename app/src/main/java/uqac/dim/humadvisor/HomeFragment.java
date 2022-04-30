@@ -101,9 +101,6 @@ public class HomeFragment extends Fragment implements AdapterFromFirebase.OnNote
     public void onNoteClick(int position) {
         User userClickedOn = list.get(position);
         String userClickedOnFirebaseUID= userClickedOn.getFirebaseUID();
-        Bundle bundle = new Bundle();
-        bundle.putString("ClickedUID", userClickedOnFirebaseUID);
-
         Intent intent = new Intent(getActivity(), OtherProfileActivity.class);
         intent.putExtra("ClickedUID", userClickedOnFirebaseUID);
         startActivity(intent);
