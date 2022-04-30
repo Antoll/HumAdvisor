@@ -6,7 +6,6 @@ import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,7 +40,6 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             clickedUID = (String) savedInstanceState.getSerializable("ClickedUID");
         }
-        Toast.makeText(this, clickedUID, Toast.LENGTH_SHORT).show();
 
         rateNowButton = findViewById(R.id.ratenow_button);
         rateNowButton.setOnClickListener(this);
@@ -73,7 +71,6 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
                         if (task.getResult().exists()) {
                             DataSnapshot dataSnapshot = task.getResult();
                             long oldNbrOfVote = (long) dataSnapshot.child("nbrOfVote").getValue();
-                            Toast.makeText(RateActivity.this, String.valueOf(oldNbrOfVote), Toast.LENGTH_SHORT).show();
 
                             double oldConfort = dataSnapshot.child("confortable").getValue(Double.class);
                             double newConfort = (oldConfort * oldNbrOfVote + noteConfort)/(oldNbrOfVote + 1);
@@ -81,7 +78,6 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
                             dataSnapshot.child("confortable").getRef().setValue(newConfort2);
 
                             double oldSympa = (double) dataSnapshot.child("sympa").getValue(Double.class);
-                            Toast.makeText(RateActivity.this, String.valueOf(oldSympa), Toast.LENGTH_SHORT).show();
                             double newSympa = (oldSympa * oldNbrOfVote + noteSympa)/(oldNbrOfVote + 1);
                             long newSympa2 = (long) newSympa;
                             dataSnapshot.child("sympa").getRef().setValue(newSympa2);
