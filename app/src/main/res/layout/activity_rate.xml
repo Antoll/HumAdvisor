@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/sympa_textview"
         android:numStars="5"
-        android:rating="1"/>
+        android:rating="1" />
 
     <TextView
         android:id="@+id/sociable_textview"
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/sociable_textview"
         android:numStars="5"
-        android:rating="1"/>
+        android:rating="1" />
 
     <TextView
         android:id="@+id/intel_textview"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/intel_textview"
         android:numStars="5"
-        android:rating="1"/>
+        android:rating="1" />
 
     <TextView
         android:id="@+id/beaute_textview"
