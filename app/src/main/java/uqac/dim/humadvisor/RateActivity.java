@@ -17,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class RateActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -59,7 +61,7 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
                 noteConfort = rBarConfort.getRating();
                 noteSympa = rBarSympa.getRating();
                 noteSociable = rBarSociable.getRating();
-                noteIntel = rBarBeaute.getRating();
+                noteIntel = rBarIntel.getRating();
                 noteBeaute = rBarBeaute.getRating();
                 noteGlobal = (noteConfort+noteSympa+noteSociable+noteIntel+noteBeaute)/5;
 
@@ -71,36 +73,46 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
                         if (task.getResult().exists()) {
                             DataSnapshot dataSnapshot = task.getResult();
                             long oldNbrOfVote = (long) dataSnapshot.child("nbrOfVote").getValue();
-                            Toast.makeText(RateActivity.this, String.valueOf(noteConfort), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RateActivity.this, String.valueOf(oldNbrOfVote), Toast.LENGTH_SHORT).show();
 
-//                            double oldConfort = (double) dataSnapshot.child("confortable").getValue();
-//                            double newConfort = (oldConfort * oldNbrOfVote + noteConfort)/(oldNbrOfVote + 1);
-//                            dataSnapshot.child("confortable").getRef().setValue(newConfort);
-//
-//                            double oldSympa = (double) dataSnapshot.child("sympa").getValue();
-//                            Toast.makeText(RateActivity.this, String.valueOf(oldSympa), Toast.LENGTH_SHORT).show();
-//                            double newSympa = (oldSympa * oldNbrOfVote + noteSympa)/(oldNbrOfVote + 1);
-//                            dataSnapshot.child("sympa").getRef().setValue(newSympa);
-//
-//                            double oldSociable = (double) dataSnapshot.child("sociable").getValue();
-//                            double newSociable = (oldSociable * oldNbrOfVote + noteSociable)/(oldNbrOfVote + 1);
-//                            dataSnapshot.child("sociable").getRef().setValue(newSociable);
-//
-//                            double oldIntel = (double) dataSnapshot.child("intelligence").getValue();
-//                            double newIntel = (oldIntel * oldNbrOfVote + noteIntel)/(oldNbrOfVote + 1);
-//                            dataSnapshot.child("intelligence").getRef().setValue(newIntel);
-//
-//                            double oldBeaute = (double) dataSnapshot.child("beau").getValue();
-//                            double newBeaute = (oldBeaute * oldNbrOfVote + noteBeaute)/(oldNbrOfVote + 1);
-//                            dataSnapshot.child("sociable").getRef().setValue(newBeaute);
-//
-//                            double oldGlobal = (double) dataSnapshot.child("globalNote").getValue();
-//                            double newGlobal = (newConfort + newSympa + newSociable
-//                                    + newIntel + newBeaute)/5;
-//                            dataSnapshot.child("globalNote").getRef().setValue(newGlobal);
+                            double oldConfort = dataSnapshot.child("confortable").getValue(Double.class);
+                            double newConfort = (oldConfort * oldNbrOfVote + noteConfort)/(oldNbrOfVote + 1);
+                            long newConfort2 = (long) newConfort;
+                            dataSnapshot.child("confortable").getRef().setValue(newConfort2);
+
+                            double oldSympa = (double) dataSnapshot.child("sympa").getValue(Double.class);
+                            Toast.makeText(RateActivity.this, String.valueOf(oldSympa), Toast.LENGTH_SHORT).show();
+                            double newSympa = (oldSympa * oldNbrOfVote + noteSympa)/(oldNbrOfVote + 1);
+                            long newSympa2 = (long) newSympa;
+                            dataSnapshot.child("sympa").getRef().setValue(newSympa2);
+
+                            double oldSociable = (double) dataSnapshot.child("sociable").getValue(Double.class);
+                            double newSociable = (oldSociable * oldNbrOfVote + noteSociable)/(oldNbrOfVote + 1);
+                            long newSociable2 = (long) newSociable;
+                            dataSnapshot.child("sociable").getRef().setValue(newSociable2);
+
+                            double oldIntel = (double) dataSnapshot.child("intelligence").getValue(Double.class);
+                            double newIntel = (oldIntel * oldNbrOfVote + noteIntel)/(oldNbrOfVote + 1);
+                            long newIntel2 = (long) newIntel;
+                            dataSnapshot.child("intelligence").getRef().setValue(newIntel2);
+
+                            double oldBeaute = (double) dataSnapshot.child("beau").getValue(Double.class);
+                            double newBeaute = (oldBeaute * oldNbrOfVote + noteBeaute)/(oldNbrOfVote + 1);
+                            long newBeaute2 = (long) newBeaute;
+                            dataSnapshot.child("beau").getRef().setValue(newBeaute2);
+
+                            double oldGlobal = (double) dataSnapshot.child("globalNote").getValue(Double.class);
+                            double newGlobal = (newConfort + newSympa + newSociable
+                                    + newIntel + newBeaute)/5;
+                            long newGlobal2 = (long) newGlobal;
+                            dataSnapshot.child("globalNote").getRef().setValue(newGlobal2);
 
 
                             dataSnapshot.child("nbrOfVote").getRef().setValue(oldNbrOfVote + 1);
+                            Intent intent = new Intent(RateActivity.this, OtherProfileActivity.class);
+                            intent.putExtra("ClickedUID", clickedUID);
+                            startActivity(intent);
+                            finish();
 
 
 

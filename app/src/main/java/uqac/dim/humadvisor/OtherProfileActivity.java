@@ -116,6 +116,7 @@ public class OtherProfileActivity extends Activity implements View.OnClickListen
                 Intent intent = new Intent(this, RateActivity.class);
                 intent.putExtra("ClickedUID", clickedUID);
                 startActivity(intent);
+                finish();
         }
     }
 }
